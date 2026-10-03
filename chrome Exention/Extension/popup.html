@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhishGuard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <h1>PhishGuard</h1>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="field">
+          <span class="label">Title</span>
+          <span id="pageTitle" class="value muted">Loading...</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Status</span>
+          <span id="status" class="value status-warning">⏳ Initializing...</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Header Analysis</span>
+          <span id="headerPrediction" class="value muted">-</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Body Analysis</span>
+          <span id="bodyPrediction" class="value muted">-</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Final Verdict</span>
+          <span id="prediction" class="value">-</span>
+        </div>
+
+        <div class="field">
+          <span class="label">Confidence</span>
+          <span id="confidence" class="value">-</span>
+        </div>
+
+        <div class="field">
+          <span class="label">URL</span>
+          <span id="pageUrl" class="value url-text">-</span>
+        </div>
+        <div class="field flex-col" id="headerField" style="display:none; border-bottom: none;">
+          <span class="label" style="align-self: flex-start;">Email Headers</span>
+          <textarea id="emailHeaders" class="value" readonly></textarea>
+        </div>
+      </div>
+
+      <button id="verifyBodyButton" class="primary-button" style="display: none; background: linear-gradient(135deg, var(--warning), #d97706); margin-bottom: 10px;">Verify with Body</button>
+      <button id="analyzeButton" class="primary-button">Analyze Again</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
